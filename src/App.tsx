@@ -1,6 +1,53 @@
+import { useState } from 'react'
 import './App.css'
 
+type Screen = 'home' | 'reflection'
+
 function App() {
+  const [screen, setScreen] = useState<Screen>('home')
+
+  if (screen === 'reflection') {
+    return (
+      <div className="app-shell">
+        <header className="site-header">
+          <p className="brand">Weekly Check-in</p>
+          <button
+            className="text-button"
+            type="button"
+            onClick={() => setScreen('home')}
+          >
+            Back to home
+          </button>
+        </header>
+
+        <main className="reflection-page">
+          <p className="eyebrow">Step 1 of 4 · Notice what helped</p>
+
+          <h1 className="reflection-title">What went well this week?</h1>
+
+          <p className="intro-text">
+            Begin with what supported you. This is not about judging the whole
+            week. Notice a few useful moments clearly.
+          </p>
+
+          <label className="question">
+            <span>What are you glad you did this week?</span>
+            <textarea
+              rows={5}
+              placeholder="A useful action, a moment of restraint, or something you maintained..."
+            />
+          </label>
+
+          <div className="reflection-actions">
+            <button className="primary-button" type="button">
+              Continue
+            </button>
+          </div>
+        </main>
+      </div>
+    )
+  }
+
   return (
     <div className="app-shell">
       <header className="site-header">
@@ -20,7 +67,11 @@ function App() {
           </p>
 
           <div className="actions">
-            <button className="primary-button" type="button">
+            <button
+              className="primary-button"
+              type="button"
+              onClick={() => setScreen('reflection')}
+            >
               Start this week&apos;s reflection
             </button>
 

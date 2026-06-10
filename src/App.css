@@ -117,3 +117,54 @@ button {
     margin-top: 48px;
   }
 }
+
+.text-button {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #475467;
+  font-weight: 600;
+}
+
+.reflection-page {
+  max-width: 720px;
+  margin: 72px auto 0;
+}
+
+.reflection-title {
+  margin-bottom: 16px;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+}
+
+.question {
+  display: grid;
+  gap: 10px;
+  margin-top: 40px;
+  color: #344054;
+  font-weight: 700;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  border: 1px solid #d0d5dd;
+  border-radius: 14px;
+  padding: 14px;
+  background: white;
+  color: #101828;
+  font: inherit;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+textarea:focus {
+  border-color: #98a2b3;
+  outline: 3px solid #eaecf0;
+}
+
+.reflection-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
