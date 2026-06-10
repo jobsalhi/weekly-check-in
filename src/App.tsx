@@ -5,6 +5,7 @@ type Screen = 'home' | 'reflection'
 
 function App() {
   const [screen, setScreen] = useState<Screen>('home')
+  const [wentWell, setWentWell] = useState('')
 
   if (screen === 'reflection') {
     return (
@@ -34,6 +35,8 @@ function App() {
             <span>What are you glad you did this week?</span>
             <textarea
               rows={5}
+              value={wentWell}
+              onChange={(event) => setWentWell(event.target.value)}
               placeholder="A useful action, a moment of restraint, or something you maintained..."
             />
           </label>
